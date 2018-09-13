@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'bundler/setup'
+Dir.glob('lib/**/*.rb') { |f| require_relative f }
 
 Bundler.require(:default)
 Dotenv.load
