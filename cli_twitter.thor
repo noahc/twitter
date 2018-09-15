@@ -6,8 +6,11 @@ Bundler.require(:default)
 Dotenv.load
 
 class CliTwitter < Thor
-  desc "hello_world", "prints hello world to the terminal"
-  def hello_world
-    "Hello World!"
+  desc "fetch_url_tweets", "fetches all tweets with urls"
+  def fetch_url_tweets
+    My.tweets.each do |tweet|
+      tweet = Tweet.new(tweet)
+      p ["TEXT", tweet.text]
+    end
   end
 end

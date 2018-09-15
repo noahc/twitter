@@ -1,4 +1,11 @@
-class Twitter
+class My
+
+  def self.tweets
+    client.home_timeline
+  end
+
+  private
+
   def self.client
     Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV['CONSUMER_KEY']
