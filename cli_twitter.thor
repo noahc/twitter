@@ -10,7 +10,6 @@ class CliTwitter < Thor
   def fetch_url_tweets
     My.tweets.each do |tweet|
       tweet = Tweet.new(tweet)
-      p ["TEXT", tweet.text]
     end
   end
 end
